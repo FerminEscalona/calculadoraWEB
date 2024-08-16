@@ -4,6 +4,8 @@ const display_output = document.querySelector('.display .output');
 const deletHistory = document.querySelector('.clean');
 const history_input = document.querySelector('.record .text');
 const history_list = document.getElementById('history-list');
+const changecolorBtn = document.querySelector('[data-key="chagecolor"]');
+const body = document.body;
 let input = "";
 
 for (let key of keys){
@@ -14,8 +16,6 @@ for (let key of keys){
             input = "";
             display_input.innerHTML = "";
             display_output.innerHTML = "";
-        }else if(value == '🔆'){
-
         }else if(value == "="){
             let result = eval(preparation_Input(input));
             display_output.innerHTML = result;
@@ -49,6 +49,11 @@ for (let key of keys){
 deletHistory.addEventListener('click', () => {
     history_input.innerHTML = "";
 })
+
+changecolorBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode');
+});
 
 function prettyInput(input){
     let input_array = input.split("");
@@ -111,5 +116,4 @@ function addHistory(ecuation){
     const li = document.createElement('li');
     li.textContent = ecuation;
     history_list.appendChild(li);
-}
-    
+} 

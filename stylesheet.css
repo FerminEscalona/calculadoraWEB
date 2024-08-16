@@ -102,10 +102,10 @@
     color: #26FED7;
 }
 .history{
-    width: 100%;
+    width: 32rem;
+    height: 24rem;
     max-width: 32rem;
     max-height: 24rem;
-    min-height: 24rem;
     display: flex;
     flex-direction: column;
     border-radius: 1.5rem;
@@ -113,7 +113,7 @@
     position: relative;
 }
 .record{
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -124,7 +124,7 @@
     border-radius: 1rem;
     box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.2);
     width: 95%;
-    height: 90%;
+    height: 100%;
     overflow: hidden;
 }
 .text{
@@ -158,6 +158,88 @@
 #history-list li{
     padding: 5px 0;
     border-bottom: 1px solid white;
+}
+
+/**Cambio de color en la calculadora**/
+
+body.dark-mode {
+    background-color: #22252D;
+    color: white;
+}
+
+body.dark-mode .calculator {
+    background-color: #F7F7F7;
+}
+
+body.dark-mode .keys .key {
+    background-color: #22252D;
+}
+
+body.dark-mode .keys .key:hover {
+    background-color: #F7F7F7;
+}
+
+body.dark-mode .display {
+    color: black;
+}
+body.dark-mode .record{
+    background-color: #F7F7F7;
+}
+body.dark-mode .clean{
+    color: black;
+}
+body.dark-mode .clean:hover{
+    color: #EB6666;
+}
+/**light mode**/
+
+body.light-mode {
+    background-color: #F7F7F7;
+    color: white;
+}
+
+body.light-mode .calculator {
+    background-color: #22252D;
+}
+
+body.light-mode .keys .key {
+    background-color: #22252D;
+}
+
+body.light-mode .keys .key {
+    background-color: #22252D;
+}
+
+body.light-mode .display {
+    color: white;
+}
+@media(max-width: 768px){
+    .calculator .history {
+        max-width: 90vw; 
+        max-height: 60vh; 
+    }
+
+    .keys .key span {
+        font-size: 1.5rem; 
+    }
+
+    .display .input {
+        font-size: 0.8rem; 
+    }
+
+    .display .output {
+        font-size: 1.5rem;
+    }
+    
+    .keys .key {
+        padding-top: 30%;
+    }
+    .app{
+        flex-direction: column;
+    }
+    .history{
+        margin-top: 0rem;
+    }
 }
 
 
