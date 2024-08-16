@@ -10,6 +10,7 @@
     height: 100vh;
     gap: 1rem;
     justify-content: center;
+    align-items: center;
 }
 
 .calculator{
@@ -105,6 +106,7 @@
     width: 100%;
     max-width: 32rem;
     max-height: 24rem;
+    min-height: 24rem;
     display: flex;
     flex-direction: column;
     border-radius: 1.5rem;
