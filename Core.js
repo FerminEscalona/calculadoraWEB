@@ -1,7 +1,9 @@
 const keys = document.querySelectorAll('.key');
 const display_input = document.querySelector('.display .input');
 const display_output = document.querySelector('.display .output');
-
+const deletHistory = document.querySelector('.clean');
+const history_input = document.querySelector('.record .text');
+const history_list = document.getElementById('history-list');
 let input = "";
 
 for (let key of keys){
@@ -17,6 +19,7 @@ for (let key of keys){
         }else if(value == "="){
             let result = eval(preparation_Input(input));
             display_output.innerHTML = result;
+            addHistory(input + " = " + result);
         }else if(value == "brackets"){
             if (input.indexOf("(") == -1 ||
                 input.indexOf("(") != -1 &&
@@ -43,6 +46,10 @@ for (let key of keys){
         }
     })
 }
+deletHistory.addEventListener('click', () => {
+    history_input.innerHTML = "";
+})
+
 function prettyInput(input){
     let input_array = input.split("");
     let input_array_length = input_array.length;
@@ -98,5 +105,11 @@ function preparation_Input(input){
         }
     }
     return input_array.join("");
+}
+
+function addHistory(ecuation){
+    const li = document.createElement('li');
+    li.textContent = ecuation;
+    history_list.appendChild(li);
 }
     
